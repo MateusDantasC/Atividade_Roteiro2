@@ -40,22 +40,21 @@ class MainActivity : AppCompatActivity() {
             val novoNome = novoNomeEditText.text.toString().trim()
             if (novoNome.isNotEmpty()) {
                 listaNomes.add(novoNome)
-                nomesAdapter.notifyDataSetChanged() // Notifica o adapter que os dados mudaram
-                novoNomeEditText.text.clear() // Limpa o campo de texto
+                nomesAdapter.notifyDataSetChanged()
+                novoNomeEditText.text.clear()
             } else {
-                Toast.makeText(this, "Digite um nome para adicionar.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.msg_digite_nome), Toast.LENGTH_SHORT).show()
             }
         }
 
-        // Remover o último nome da lista ao clicar no botão "Remover Último"
         removerNomeBotao.setOnClickListener {
             if (listaNomes.isNotEmpty()) {
-                listaNomes.removeAt(listaNomes.size - 1) // Remove o elemento no último índice
-                nomesAdapter.notifyDataSetChanged() // Notifica o adapter que os dados mudaram
+                listaNomes.removeAt(listaNomes.size - 1)
+                nomesAdapter.notifyDataSetChanged()
             } else {
                 Toast.makeText(
                     this,
-                    "A lista está vazia. Não há nada para remover.",
+                    getString(R.string.msg_lista_vazia),
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -72,18 +71,17 @@ class MainActivity : AppCompatActivity() {
             R.id.ItemConfiguracao -> {
                 Toast.makeText(
                     this@MainActivity,
-                    "Configuração selecionada",
+                    getString(R.string.msg_configuracao_selecionada),
                     Toast.LENGTH_LONG
                 ).show()
             }
             R.id.ItemSobre -> {
                 Toast.makeText(
                     this@MainActivity,
-                    "Sobre selecionado",
+                    getString(R.string.msg_sobre_selecionado),
                     Toast.LENGTH_LONG
                 ).show()
             }
-
         }
         return super.onOptionsItemSelected(item)
     }

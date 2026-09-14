@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Roteiro2</string>
+    <string name="msg_digite_nome">Digite um nome para adicionar.</string>
+    <string name="msg_lista_vazia">A lista está vazia. Não há nada para remover.</string>
+    <string name="msg_configuracao_selecionada">Configuração selecionada</string>
+    <string name="msg_sobre_selecionado">Sobre selecionado</string>
 </resources>
